@@ -93,7 +93,7 @@ jobs:
              --payload $(echo "{\"input\": \"${{ matrix.input }}\"}" | base64) \
              --output json out
            if grep -q "Error" out; then
-             exit1
+             exit 1
            fi
       - name: wait 30 seconds
         run: sleep 30
